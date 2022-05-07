@@ -13,6 +13,6 @@
         <Label id="title">Yuber</Label>
         <TextField id="input" fx:id="username">Username</TextField>
         <PasswordField id="input" fx:id="password">Password</PasswordField>
-        <Button id="btn-default-small" onAction="#onHelloButtonClick" text="Register" />
+        <Button id="btn-default-small" onAction="#onHelloButtonClick" text="register" />
     </VBox>
 </VBox>
