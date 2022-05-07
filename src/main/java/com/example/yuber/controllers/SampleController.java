@@ -1,9 +1,9 @@
-package com.example.yuber;
+package com.example.yuber.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class SampleController {
     @FXML
     private Label welcomeText;
 

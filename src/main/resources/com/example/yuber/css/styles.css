@@ -3,11 +3,17 @@
   src: url("../fonts/Questrial-Regular.ttf");
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
 #root {
     -fx-background-image: url("../img/background.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: left top, center;
     -fx-background-size: cover;
+    -fx-font-family: 'Roboto';
 }
 
 #paneSmall {

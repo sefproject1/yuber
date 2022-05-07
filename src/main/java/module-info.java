@@ -12,4 +12,6 @@ module com.example.yuber {
 
     opens com.example.yuber to javafx.fxml;
     exports com.example.yuber;
+    exports com.example.yuber.controllers;
+    opens com.example.yuber.controllers to javafx.fxml;
 }

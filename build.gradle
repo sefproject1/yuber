@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.example.yuber'
-    mainClass = 'com.example.yuber.HelloApplication'
+    mainClass = 'com.example.yuber.Main'
 }
 
 javafx {
