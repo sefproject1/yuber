@@ -9,9 +9,11 @@ module com.example.yuber {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.yuber to javafx.fxml;
     exports com.example.yuber;
     exports com.example.yuber.controllers;
     opens com.example.yuber.controllers to javafx.fxml;
+    exports com.example.yuber.models;
 }
