@@ -32,8 +32,12 @@ public class LoginController {
             UserSession.getInstance().setUser(user);
 
             try {
-                // move to base-view.fxml
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("base-view.fxml"));
+                String view = "";
+                if(UserSession.getUser().getRole() == "customer")
+                    view = "customer-view.fxml";
+                else view = "driver-view.fxml";
+
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(view));
                 Parent root = (Parent) fxmlLoader.load();
 
                 Stage stage = new Stage();

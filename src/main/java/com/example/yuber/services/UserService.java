@@ -76,8 +76,6 @@ public class UserService {
     public static UserModel checkInfo(String username, String password) {
         parseJson();
 
-        System.out.println(users.size());
-
         for(UserModel user: users) {
             if (user.getUsername().equals(username)) {
                 String encodedPassword = UserService.encodePassword(username, password);
