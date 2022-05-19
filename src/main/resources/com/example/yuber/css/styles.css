@@ -95,3 +95,7 @@
 #txt:focused {
     -fx-prompt-text-fill: gray;
 }
+
+#error {
+    -fx-text-fill: red;
+}
