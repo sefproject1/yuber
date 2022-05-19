@@ -10,7 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -25,9 +27,9 @@ public class UserService {
     public static void parseJson(){
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            users = Arrays.asList(objectMapper.readValue(UserService.class.getClassLoader().getResource("users.json"), UserModel[].class));
+            users = Arrays.asList(objectMapper.readValue(Path.of("users.json").toFile(), UserModel[].class));
             arrayList = new ArrayList<>(users);
-        }catch (Exception e){
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -38,7 +40,7 @@ public class UserService {
         System.out.println(arrayList);
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(new File("userss.json"), arrayList);
+            objectMapper.writeValue(new File("users.json"), arrayList);
         }catch (IOException e){
             throw new RuntimeException();
         }
@@ -69,5 +71,21 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return messageDigest;
+    }
+
+    public static UserModel checkInfo(String username, String password) {
+        parseJson();
+
+        System.out.println(users.size());
+
+        for(UserModel user: users) {
+            if (user.getUsername().equals(username)) {
+                String encodedPassword = UserService.encodePassword(username, password);
+                if (user.getPassword().equals(encodedPassword))
+                    return user;
+                return null;
+            }
+        }
+        return null;
     }
 }

@@ -3,22 +3,15 @@ package com.example.yuber.controllers;
 import com.example.yuber.Main;
 import com.example.yuber.models.UserModel;
 import com.example.yuber.models.UserSession;
-import com.example.yuber.services.LoginService;
+import com.example.yuber.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class LoginController {
     @FXML
@@ -33,7 +26,7 @@ public class LoginController {
     @FXML
     protected void onLoginButtonClick(ActionEvent event) {
         // check if the user exists in the file
-        UserModel user = LoginService.checkInfo(username.getText(), password.getText());
+        UserModel user = UserService.checkInfo(username.getText(), password.getText());
         if (user != null) {
             // save the user to the UserSession singleton
             UserSession.getInstance().setUser(user);
