@@ -1,0 +1,15 @@
+Index: userss.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"username\":\"ana\",\"password\":\"�\\u001B\\u0017�\\u001F��w~����\\u001A\\u0004��e��\\f��r\\u0001ljѽ�\\u000BY��L�E\u007F�ߞ^a>�\\u001D&�NP\\u001D�x���2�\\u000EOS�\",\"surname\":\"Surname\",\"name\":\"Name\",\"phone_number\":\"Phone number\",\"email\":\"Email\",\"address\":\"Address\",\"role\":null}]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/userss.json b/userss.json
+--- a/userss.json	
++++ b/userss.json	
+@@ -1,1 +1,1 @@
+-[{"username":"ana","password":"�\u001B\u0017�\u001F��w~����\u001A\u0004��e��\f��r\u0001ljѽ�\u000BY��L�E�ߞ^a>�\u001D&�NP\u001D�x���2�\u000EOS�","surname":"Surname","name":"Name","phone_number":"Phone number","email":"Email","address":"Address","role":null}]
+\ No newline at end of file
++[{"username":"Username","password":")��\u0014R�\u000B�`4\f\u0015n�v/��3k\u0004\u0017%��7(�\u0012�\u001D���Ԟ�\u0007�k]�����\\�~,����ݹ�D\u0004\u0017]j%","surname":"Surname","name":"Name","phone_number":"Phone number","email":"Email","address":"Address","role":null}]
+\ No newline at end of file
