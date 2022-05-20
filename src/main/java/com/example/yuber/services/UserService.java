@@ -1,13 +1,16 @@
 package com.example.yuber.services;
 
 
+import com.example.yuber.exceptions.InvalidCredentialsException;
 import com.example.yuber.exceptions.UserAlreadyExistsException;
 import com.example.yuber.models.UserModel;
+import com.example.yuber.models.UserSession;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -37,14 +40,12 @@ public class UserService {
     public static void addUser(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws UserAlreadyExistsException {
         checkUserDoesNotExist(username);
         arrayList.add(new UserModel(username, encodePassword(username, password), surname, name, phone_number, email, address, role));
-        System.out.println(arrayList);
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writeValue(new File("users.json"), arrayList);
         }catch (IOException e){
             throw new RuntimeException();
         }
-
     }
 
     private static void checkUserDoesNotExist(String username) throws UserAlreadyExistsException{
@@ -73,6 +74,27 @@ public class UserService {
         return messageDigest;
     }
 
+    public static void login(String username, String password) throws InvalidCredentialsException {
+        // check if the user exists in the file
+        UserModel user = UserService.checkInfo(username, password);
+        if (user != null) {
+            // save the user to the UserSession singleton
+            UserSession.getInstance().setUser(user);
+
+            try {
+                String view = "";
+                if(UserSession.getInstance().getUser().getRole().equals("driver"))
+                    view = "driver-view.fxml";
+                else view = "customer-view.fxml";
+
+                SceneService.NewWindow(view, "Dashboard - Yuber");
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else throw new InvalidCredentialsException();
+    }
+
     public static UserModel checkInfo(String username, String password) {
         parseJson();
 
@@ -85,5 +107,9 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public static void logout() {
+        UserSession.getInstance().deleteUser();
     }
 }

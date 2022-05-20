@@ -17,4 +17,9 @@ public final class UserSession { // Singleton
     public static UserModel getUser() {
         return user;
     }
+
+    public static void deleteUser() {
+        if (user != null)
+            user = null;
+    }
 }
