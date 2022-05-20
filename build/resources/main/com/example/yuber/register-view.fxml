@@ -10,20 +10,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox id="root" alignment="CENTER" prefHeight="374.0" prefWidth="426.0" spacing="20.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.yuber.controllers.RegistrationController">
+<?import javafx.scene.control.Hyperlink?>
+<VBox alignment="CENTER" prefHeight="374.0" prefWidth="426.0" spacing="20.0" fx:id="rootPane" id="root" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.yuber.controllers.RegistrationController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
     <VBox id="paneSmall" alignment="BASELINE_CENTER" prefHeight="296.0" prefWidth="233.0">
         <Label id="title">Yuber</Label>
-        <TextField id="input" fx:id="usernameField" prefWidth="152.0" text="Username">Username</TextField>
-        <TextField text="Password" fx:id="passwordField" />
-        <TextField text="Surname" fx:id="surnameField" />
-        <TextField text="Name" fx:id="nameField" />
-        <TextField text="Phone number" fx:id="phoneNumberField" />
-        <TextField text="Email" fx:id="emailField" />
-        <TextField text="Address" fx:id="addressField" />
+        <TextField id="input" fx:id="usernameField" prefWidth="152.0" promptText="Username"></TextField>
+        <PasswordField id="input" promptText="Password" fx:id="passwordField" />
+        <TextField id="input" promptText="Surname" fx:id="surnameField" />
+        <TextField id="input" promptText="Name" fx:id="nameField" />
+        <TextField id="input" promptText="Phone number" fx:id="phoneNumberField" />
+        <TextField id="input" promptText="Email" fx:id="emailField" />
+        <TextField id="input" promptText="Address" fx:id="addressField" />
 
         <AnchorPane prefHeight="36.0" prefWidth="386.0">
             <children>
@@ -31,7 +32,8 @@
                 <Text layoutX="10.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your role" wrappingWidth="150.0" />
             </children>
         </AnchorPane>
-        <Text fx:id="registrationMessage"/>
+        <Text id="error" fx:id="registrationMessage"/>
         <Button id="btn-default-small" onAction="#handleRegistrationAction" text="Sign up" />
+        <Hyperlink onAction="#onLoginButtonClick">Log in to an existing account</Hyperlink>
     </VBox>
 </VBox>

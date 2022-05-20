@@ -43,6 +43,14 @@
     -fx-font-size: 35pt;
 }
 
+#info {
+    -fx-font-size: 10pt;
+}
+
+#header {
+    -fx-font-size: 20pt;
+}
+
 #input {
     -fx-max-width: 300pt;
 }
