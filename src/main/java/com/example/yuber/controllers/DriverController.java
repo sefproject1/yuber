@@ -1,45 +1,44 @@
 package com.example.yuber.controllers;
 
-import com.example.yuber.models.OrderModel;
 import com.example.yuber.services.OrderService;
-import com.example.yuber.services.UserService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+
+import java.util.ArrayList;
 
 public class DriverController {
 
-    int index;
-    int row = 1;
-    @FXML
-    GridPane button_grid;
-    @FXML
-    GridPane label;
-    @FXML
-    Button button;
     @FXML
     GridPane pane;
-
+    int index;
+    int row = 1;
     int rowIndex = 0;
+    int size;
+    int statusIndex = 0, sourceIndex = 0, destinationIndex = 0;
+    boolean flag = true;
+
     public void initialize(){
-        for(index = 1; index < 4; index++){
+        getSize();
+        for(index = 1; index <= size; index++){
             IdLabel();
             sourceAddressLabel();
             destAddressLabel();
             statusLabel();
+            System.out.println("flag" + flag);
             addButton();
             row++;
         }
-        method();
     }
 
     public void addButton() {
-        Button button1 = new Button("Accept ride");
-        pane.add(button1, 4, rowIndex);
+        Button button = new Button("Accept ride");
+        if (!flag)
+            button.setVisible(false);
+        //button.getStyleClass().addAll(Style.);
+        pane.add(button, 4, rowIndex);
         rowIndex++;
     }
 
@@ -51,30 +50,59 @@ public class DriverController {
     }
 
     public void sourceAddressLabel() {
-        Label sourceAddress = new Label("Source address: ");
+        Label sourceAddress = new Label("From: " + getSourceAddress());
         sourceAddress.setMinSize(50, 20);
         sourceAddress.setFont(new Font("Arial", 20));
         pane.add(sourceAddress, 1, rowIndex);
+        sourceIndex++;
     }
 
     public void destAddressLabel() {
-        Label destAddress = new Label("Destination address: ");
+        Label destAddress = new Label("To: " + getDestAddress());
         destAddress.setMinSize(50, 20);
         destAddress.setFont(new Font("Arial", 20));
         pane.add(destAddress, 2, rowIndex);
+        destinationIndex++;
     }
 
     public void statusLabel() {
-        Label status = new Label("Status: ");
+        flag = true;
+        Label status = new Label("Status: " + getStatus());
+        if(getStatus().equals("CANCELED")){
+            flag = false;
+        }
         status.setMinSize(50, 20);
         status.setFont(new Font("Arial", 20));
         pane.add(status, 3, rowIndex);
+        statusIndex++;
     }
 
-    public void method(){
-        //OrderService.getOrders();
-        String address = OrderService.getOrders();
-        System.out.println(address);
+    public String getSourceAddress(){
+        ArrayList<String> arrayList = new ArrayList<>();
+        for(String array : OrderService.getSourceAddress()){
+            arrayList.add(array);
+        }
+        return arrayList.get(sourceIndex);
+    }
+
+    public String getDestAddress() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for(String array : OrderService.getDestAddress()){
+            arrayList.add(array);
+        }
+        return arrayList.get(statusIndex);
+    }
+
+    public String getStatus() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        for(String array : OrderService.getStatus()){
+            arrayList.add(array);
+            System.out.println(array);
+        }
+        return arrayList.get(statusIndex);
+    }
+    public void getSize() {
+        size = OrderService.getSize();
     }
 
 }

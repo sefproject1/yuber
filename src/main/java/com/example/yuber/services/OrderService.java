@@ -76,16 +76,45 @@ public class OrderService {
         }
     }
 
-    public static String getOrders() {
+    public static ArrayList<String> getSourceAddress() {
 
+        ArrayList<String> arrayList1 = new ArrayList<>();
         String address = "";
         parseJson();
         for(OrderModel orderModel : orders) {
             address += orderModel.getSourceAddress();
-            //System.out.println(orderModel.getSourceAddress());
-            //System.out.println(orderModel.getDestinationAddress());
-            //System.out.println(orderModel.getStatus());
+            arrayList1.add(orderModel.getSourceAddress());
         }
-        return address;
+        return arrayList1;
+    }
+
+    public static ArrayList<String> getDestAddress() {
+        ArrayList<String> arrayList1 = new ArrayList<>();
+        String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            address += orderModel.getSourceAddress();
+            arrayList1.add(orderModel.getDestinationAddress());
+        }
+        return arrayList1;
+    }
+
+    public static ArrayList<String> getStatus() {
+        ArrayList<String> arrayList1 = new ArrayList<>();
+        String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            address += orderModel.getSourceAddress();
+            arrayList1.add(orderModel.getStatus());
+        }
+        return arrayList1;
+    }
+    static int size = 0;
+    public static int getSize() {
+        parseJson();
+        for(OrderModel orderModel : orders){
+            size++;
+        }
+        return size;
     }
 }

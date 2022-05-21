@@ -8,6 +8,7 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+
 #root {
     -fx-background-image: url("../img/background.jpg");
     -fx-background-repeat: stretch;
