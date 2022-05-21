@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         UserService.parseJson();
         //System.out.println("ok");
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("driver-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1100, 800);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/styles.css")).toExternalForm());
         stage.setTitle("Welcome to Yuber");

@@ -1,10 +1,8 @@
 package com.example.yuber.services;
 
 import com.example.yuber.exceptions.EmptyInputException;
-import com.example.yuber.exceptions.UserAlreadyExistsException;
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
-import com.example.yuber.models.UserModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -17,6 +15,8 @@ import java.util.List;
 public class OrderService {
     private static List<OrderModel> orders;
     private static List<OrderModel> arrayList;
+
+    //private static List<OrderModel> address;
 
     public static void parseJson(){
         try {
@@ -74,5 +74,18 @@ public class OrderService {
         }catch (IOException e){
             throw new RuntimeException();
         }
+    }
+
+    public static String getOrders() {
+
+        String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            address += orderModel.getSourceAddress();
+            //System.out.println(orderModel.getSourceAddress());
+            //System.out.println(orderModel.getDestinationAddress());
+            //System.out.println(orderModel.getStatus());
+        }
+        return address;
     }
 }
