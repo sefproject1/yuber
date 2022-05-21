@@ -1,16 +1,24 @@
 package com.example.yuber.controllers;
 
 import com.example.yuber.services.OrderService;
+import com.example.yuber.services.SceneService;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DriverController {
 
+    @FXML
+    public VBox rootPane;
     @FXML
     GridPane pane;
     int index;
@@ -37,7 +45,16 @@ public class DriverController {
         Button button = new Button("Accept ride");
         if (!flag)
             button.setVisible(false);
-        //button.getStyleClass().addAll(Style.);
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    SceneService.NewScene("/com/example/yuber/register-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
         pane.add(button, 4, rowIndex);
         rowIndex++;
     }
