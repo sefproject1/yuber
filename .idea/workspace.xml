@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a040ac40-12c6-4667-8d1c-6ae48f2a5849" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverWaitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-wait-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" afterDir="false" />
-    </list>
+    <list default="true" id="a040ac40-12c6-4667-8d1c-6ae48f2a5849" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +168,7 @@
       <workItem from="1652616625841" duration="28102000" />
       <workItem from="1652727399049" duration="6881000" />
       <workItem from="1652884841182" duration="6419000" />
-      <workItem from="1653126460625" duration="16258000" />
+      <workItem from="1653126460625" duration="16621000" />
     </task>
     <task id="LOCAL-00001" summary="SEF-1 Fixed Registration">
       <created>1652984737896</created>
@@ -216,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653146068650</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="SEF-7 made button invisible in case status is canceled">
+      <created>1653146873045</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653146873045</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +245,8 @@
     <MESSAGE value="SEF-5 Implemented &quot;Cancel Order&quot; functionality" />
     <MESSAGE value="SEF-7 designed the orders menu" />
     <MESSAGE value="SEF-7 implemented list of orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEF-7 implemented list of orders" />
+    <MESSAGE value="SEF-7 made button invisible in case status is canceled" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEF-7 made button invisible in case status is canceled" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
