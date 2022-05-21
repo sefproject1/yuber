@@ -9,6 +9,7 @@ public class UserModel {
     private String email;
     private String address;
     private String role;
+    public int penalty;
 
     public String getRole() {
         return role;
@@ -54,6 +55,14 @@ public class UserModel {
         this.address = address;
     }
 
+    public int getPenalty() {
+        return penalty;
+    }
+
+    public void setPenalty(int penalty) {
+        this.penalty = penalty;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -74,7 +83,7 @@ public class UserModel {
         return address;
     }
 
-    public UserModel(String username, String password, String surname, String name, String phone_number, String email, String address, String role){
+    public UserModel(String username, String password, String surname, String name, String phone_number, String email, String address, String role, int penalty){
         this.username = username;
         this.password = password;
         this.surname = surname;
@@ -83,6 +92,7 @@ public class UserModel {
         this.email = email;
         this.address = address;
         this.role = role;
+        this.penalty = penalty;
     }
 
     public UserModel() {
@@ -101,7 +111,8 @@ public class UserModel {
         if(!address.equals(user.address)) return false;
         if(!email.equals(user.email)) return false;
         if(!role.equals(user.role)) return false;
-        return phone_number.equals(user.phone_number);
+        if (!phone_number.equals(user.phone_number)) return false;
+        return penalty == user.penalty;
     }
 
 

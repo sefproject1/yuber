@@ -56,4 +56,23 @@ public class OrderService {
         }
         return false;
     }
+
+    public static void cancel(OrderModel om) {
+        parseJson();
+
+        for (OrderModel order : orders) {
+            if(order.equals(om) && order.getStatus().equals("WAITING")) {
+                order.setStatus("CANCELED");
+                OrderSession.setOrder(order);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("orders.json"), arrayList);
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
+    }
 }

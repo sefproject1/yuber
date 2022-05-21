@@ -39,7 +39,7 @@ public class UserService {
 
     public static void addUser(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws UserAlreadyExistsException {
         checkUserDoesNotExist(username);
-        arrayList.add(new UserModel(username, encodePassword(username, password), surname, name, phone_number, email, address, role));
+        arrayList.add(new UserModel(username, encodePassword(username, password), surname, name, phone_number, email, address, role, 0));
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writeValue(new File("users.json"), arrayList);
@@ -111,5 +111,24 @@ public class UserService {
 
     public static void logout() {
         UserSession.getInstance().deleteUser();
+    }
+
+    public static void cancelPenalty(UserModel um) {
+        parseJson();
+
+        for (UserModel user: users) {
+            if (user.equals(um)) {
+                user.setPenalty(um.getPenalty()+10);
+                UserSession.setUser(user);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("users.json"), arrayList);
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
     }
 }

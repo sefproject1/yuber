@@ -43,5 +43,8 @@ public class CustomerWaitController {
     protected void onCancelButtonClick() throws IOException {
         SceneService.NewScene("/com/example/yuber/customer-view.fxml", (Stage)rootPane.getScene().getWindow(), rootPane.getScene());
         acceptanceRunnable.setRunning(false);
+        OrderService.cancel(OrderSession.getOrder());
+        OrderSession.deleteOrder();
+        UserService.cancelPenalty(UserSession.getUser());
     }
 }

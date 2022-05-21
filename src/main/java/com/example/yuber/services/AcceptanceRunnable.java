@@ -13,8 +13,7 @@ public class AcceptanceRunnable implements Runnable {
     public void run() {
         do {
             try {
-                Thread.sleep(1000);
-                System.out.println("Test");
+                Thread.sleep(250);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
