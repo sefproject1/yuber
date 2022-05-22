@@ -10,11 +10,8 @@
     </padding>
 
     <VBox id="paneLarge" VBox.vgrow="ALWAYS">
-        <Label id="title">Looking for a ride...</Label>
-        <Label id="info">Please wait while we are looking for a ride. You can cancel anytime, but remember that you'll need to pay more for the next order.</Label>
-        <HBox spacing="5">
-            <Button id="btn-error-large" onAction="#onCancelButtonClick" style="-fx-max-width: 5000" HBox.hgrow="ALWAYS">Cancel Order</Button>
-        </HBox>
+        <Label id="title">We found a ride for you.</Label>
+        <Label id="info">Please wait for the driver to pick you up and help you reach your destination.</Label>
         <VBox>
             <Label fx:id="sourceAddress" id="header"></Label>
             <Label fx:id="destinationAddress" id="header"></Label>

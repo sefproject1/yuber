@@ -1,6 +1,12 @@
 package com.example.yuber.services;
 
+import com.example.yuber.controllers.CustomerController;
+import com.example.yuber.controllers.CustomerWaitController;
 import com.example.yuber.models.OrderSession;
+import javafx.stage.Stage;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class AcceptanceRunnable implements Runnable {
 
@@ -18,6 +24,7 @@ public class AcceptanceRunnable implements Runnable {
                 e.printStackTrace();
             }
             if (OrderService.checkIfAccepted(OrderSession.getOrder())) {
+                // change scene here
                 break;
             }
         } while(running);

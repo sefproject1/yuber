@@ -6,6 +6,7 @@ import com.example.yuber.services.AcceptanceRunnable;
 import com.example.yuber.services.OrderService;
 import com.example.yuber.services.SceneService;
 import com.example.yuber.services.UserService;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -30,23 +31,44 @@ public class CustomerWaitController {
     @FXML
     private Label price;
 
-    private AcceptanceRunnable acceptanceRunnable;
+    private Thread t;
+
+    private boolean running = true;
 
     @FXML
-    public void initialize() throws InterruptedException {
+    public void initialize() throws InterruptedException, IOException {
         sourceAddress.setText("From: " + OrderSession.getOrder().getSourceAddress());
         destinationAddress.setText("To: " + OrderSession.getOrder().getDestinationAddress());
         price.setText("You'll need to pay RON " + UserService.calculatePrice(UserSession.getUser()) + " for this ride.");
 
-        acceptanceRunnable = new AcceptanceRunnable();
-        Thread t = new Thread(acceptanceRunnable);
+        t = new Thread(this::handleThread);
         t.start();
+    }
+
+    public void handleThread() {
+        do {
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (OrderService.checkIfAccepted(OrderSession.getOrder())) {
+                Platform.runLater(() -> {
+                    try {
+                        SceneService.NewScene("/com/example/yuber/accepted-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                break;
+            }
+        } while(running);
     }
 
     @FXML
     protected void onCancelButtonClick() throws IOException {
         SceneService.NewScene("/com/example/yuber/customer-view.fxml", (Stage)rootPane.getScene().getWindow(), rootPane.getScene());
-        acceptanceRunnable.setRunning(false);
+        running = false;
         OrderService.cancel(OrderSession.getOrder());
         OrderSession.deleteOrder();
         UserService.cancelPenalty(UserSession.getUser());
