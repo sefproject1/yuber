@@ -38,7 +38,6 @@ public class RatingController {
     }
 
     public void onRateButtonClick() throws IOException {
-        System.out.println(slider.getValue());
         RatingService.addRating(OrderSession.getOrder().getDriverUsername(), slider.getValue());
         SceneService.NewScene("/com/example/yuber/customer-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
     }
