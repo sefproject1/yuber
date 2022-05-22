@@ -11,21 +11,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/com/example/yuber/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/com/example/yuber/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/com/example/yuber/driver-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/com/example/yuber/driver-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverWaitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverWaitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/yuber/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-wait-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-wait-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653206299250</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SEF-9 implemented ride is over functionality">
+      <created>1653210176993</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653210176993</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +289,8 @@
     <MESSAGE value="SEF-7 made button invisible in case status is canceled" />
     <MESSAGE value="SEF-7 handled an error" />
     <MESSAGE value="SEF-6 made accept button" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEF-6 made accept button" />
+    <MESSAGE value="SEF-9 implemented ride is over functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEF-9 implemented ride is over functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
