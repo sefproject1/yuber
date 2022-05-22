@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a040ac40-12c6-4667-8d1c-6ae48f2a5849" name="Changes" comment="" />
+    <list default="true" id="a040ac40-12c6-4667-8d1c-6ae48f2a5849" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/com/example/yuber/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/com/example/yuber/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/orders.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverWaitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/controllers/DriverWaitController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/models/OrderSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/models/OrderSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/yuber/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/yuber/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-wait-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/yuber/driver-wait-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +87,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="SEF-7" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,8 +113,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/giuliamandres/Desktop/Year2/SEF/yuber"
+    "last_opened_file_path": "/Users/giuliamandres/Desktop/Year2/SEF/yuber",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -168,7 +192,7 @@
       <workItem from="1652616625841" duration="28102000" />
       <workItem from="1652727399049" duration="6881000" />
       <workItem from="1652884841182" duration="6419000" />
-      <workItem from="1653126460625" duration="16621000" />
+      <workItem from="1653126460625" duration="31956000" />
     </task>
     <task id="LOCAL-00001" summary="SEF-1 Fixed Registration">
       <created>1652984737896</created>
@@ -219,7 +243,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653146873045</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SEF-7 made button invisible in case status is canceled">
+      <created>1653146886794</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653146886794</updated>
+    </task>
+    <task id="LOCAL-00009" summary="SEF-7 handled an error">
+      <created>1653147065492</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653147065492</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +284,8 @@
     <MESSAGE value="SEF-7 designed the orders menu" />
     <MESSAGE value="SEF-7 implemented list of orders" />
     <MESSAGE value="SEF-7 made button invisible in case status is canceled" />
-    <option name="LAST_COMMIT_MESSAGE" value="SEF-7 made button invisible in case status is canceled" />
+    <MESSAGE value="SEF-7 handled an error" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEF-7 handled an error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -262,6 +301,10 @@
         <breakpoint enabled="true" log-message="true" log-stack="true" type="java-exception">
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

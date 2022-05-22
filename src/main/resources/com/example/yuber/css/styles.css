@@ -8,6 +8,9 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+.Button{
+    -fxbackground-color: #309de6;
+}
 
 #root {
     -fx-background-image: url("../img/background.jpg");
@@ -94,6 +97,20 @@
 }
 
 #btn-error-large:pressed {
+    -fx-background-color: #bf2217;
+}
+
+#btn-finish-large {
+    -fx-background-color: #f2190a;
+    -fx-text-fill: white;
+    -fx-font-size: 15pt;
+}
+
+#btn-finish-large:hover {
+    -fx-background-color: #ff6459;
+}
+
+#btn-finish-large:pressed {
     -fx-background-color: #bf2217;
 }
 
