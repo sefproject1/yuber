@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="rootPane" id="root" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.yuber.controllers.RatingController">
+<VBox id="root" fx:id="rootPane" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.yuber.controllers.RatingController">
     <padding>
         <Insets bottom="75.0" left="75.0" right="75.0" top="75.0" />
     </padding>
@@ -12,7 +12,9 @@
     <VBox id="paneLarge" VBox.vgrow="ALWAYS">
         <Label id="title">Done :)</Label>
         <Label id="info">You've reached your destination. You can rate your driver.</Label>
+        <Slider fx:id="slider" blockIncrement="1.0" majorTickUnit="1.0" max="5" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
         <HBox spacing="5">
+            <Button id="btn-default-large" onAction="#onRateButtonClick" style="-fx-max-width: 5000" HBox.hgrow="ALWAYS">Rate</Button>
             <Button id="btn-default-large" onAction="#onPlaceOrderButtonClick" style="-fx-max-width: 5000" HBox.hgrow="ALWAYS">Place a new order</Button>
             <Button id="btn-error-large" onAction="#onLogoutButtonClick" style="-fx-max-width: 5000" HBox.hgrow="ALWAYS">Logout</Button>
         </HBox>
