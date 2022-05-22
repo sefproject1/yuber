@@ -57,6 +57,26 @@ public class OrderService {
         return false;
     }
 
+    public static boolean checkIfCanceled(OrderModel om) {
+        parseJson();
+
+        for (OrderModel order : orders) {
+            if (order.equals(om) && order.getStatus().equals("CANCELED"))
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean checkIfFinished(OrderModel om) {
+        parseJson();
+
+        for (OrderModel order : orders) {
+            if (order.equals(om) && order.getStatus().equals("FINISHED"))
+                return true;
+        }
+        return false;
+    }
+
     public static void cancel(OrderModel om) {
         parseJson();
 
