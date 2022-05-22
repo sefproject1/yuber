@@ -25,6 +25,7 @@ public class DriverController implements Initializable {
 
     @FXML
     public VBox rootPane;
+    public Button refresh;
     @FXML
     GridPane pane;
     int index = 1;
@@ -135,4 +136,7 @@ public class DriverController implements Initializable {
     }
 
 
+    public void refresh(ActionEvent actionEvent) throws IOException {
+        SceneService.NewScene("/com/example/yuber/driver-view.fxml", (Stage)rootPane.getScene().getWindow(), rootPane.getScene());
+    }
 }

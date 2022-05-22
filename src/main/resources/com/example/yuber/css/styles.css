@@ -9,9 +9,17 @@
 }
 
 .Button{
-    -fxbackground-color: #309de6;
+    -fx-background-color: #309de6;
+    -fx-text-fill: white;
 }
 
+.Button:hover {
+    -fx-background-color: #58bbfc;
+}
+
+.Button:pressed {
+    -fx-background-color: #2475ab;
+}
 #root {
     -fx-background-image: url("../img/background.jpg");
     -fx-background-repeat: stretch;

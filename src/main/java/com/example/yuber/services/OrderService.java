@@ -3,6 +3,7 @@ package com.example.yuber.services;
 import com.example.yuber.exceptions.EmptyInputException;
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
+import com.example.yuber.models.UserModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -197,13 +198,5 @@ public class OrderService {
         return orders;
     }
 
-    public static String findUser(OrderModel orderModel){
-        parseJson();
-        for(OrderModel order: orders){
-            if(order.equals(orderModel))
-                return order.getCustomerUsername();
-        }
-        return null;
-    }
 
 }

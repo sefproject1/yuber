@@ -131,4 +131,13 @@ public class UserService {
         return 25 + (um.getPenalty() * 25) / 100;
     }
 
+    public static UserModel findUser(OrderModel orderModel){
+        parseJson();
+        for(UserModel userModel : users){
+            if(userModel.getUsername().equals(orderModel.getCustomerUsername()))
+                return userModel;
+        }
+        return null;
+    }
+
 }

@@ -19,9 +19,9 @@
             <Button id="btn-finish-large" onAction="#onFinishButtonClick" style="-fx-max-width: 5000" HBox.hgrow="ALWAYS">Finish Ride</Button>
         </HBox>
         <VBox>
-            <Label id="header" fx:id="sourceAddress" prefHeight="17.0" prefWidth="125.0" />
-            <Label id="header" fx:id="destinationAddress" />
-            <Label id="header" fx:id="rideCost" />
+            <Label id="header" fx:id="sourceAddress" prefHeight="17.0" prefWidth="204.0" />
+            <Label id="header" fx:id="destinationAddress" prefHeight="17.0" prefWidth="185.0" />
+            <Label id="header" fx:id="rideCost" prefHeight="17.0" prefWidth="152.0" />
         </VBox>
     </VBox>
 </VBox>

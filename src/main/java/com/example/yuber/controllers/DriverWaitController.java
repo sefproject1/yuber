@@ -2,9 +2,9 @@ package com.example.yuber.controllers;
 
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
-import com.example.yuber.services.AcceptanceRunnable;
 import com.example.yuber.services.OrderService;
 import com.example.yuber.services.SceneService;
+import com.example.yuber.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -31,7 +31,7 @@ public class DriverWaitController {
     public void initialize() {
         sourceAddress.setText("From " + OrderSession.getOrder().getSourceAddress());
         destinationAddress.setText("To " + OrderSession.getOrder().getDestinationAddress());
-        rideCost.setText("Price - ");
+        rideCost.setText("Price - " + UserService.calculatePrice(UserService.findUser(OrderSession.getOrder())));
 
     }
     public void onCancelButtonClick() throws IOException {
