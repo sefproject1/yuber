@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootPane" id="root" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.yuber.controllers.AcceptedController">
+    <padding>
+        <Insets bottom="75.0" left="75.0" right="75.0" top="75.0" />
+    </padding>
+
+    <VBox id="paneLarge" VBox.vgrow="ALWAYS">
+        <Label id="title">We found a ride for you.</Label>
+        <Label id="info">Please wait for the driver to pick you up and help you reach your destination.</Label>
+        <VBox>
+            <Label fx:id="sourceAddress" id="header"></Label>
+            <Label fx:id="destinationAddress" id="header"></Label>
+            <Label fx:id="price" id="header"></Label>
+        </VBox>
+    </VBox>
+</VBox>

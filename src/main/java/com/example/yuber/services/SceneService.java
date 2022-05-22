@@ -28,7 +28,6 @@ public class SceneService {
 
     public static void NewScene(String view, Stage parent, Scene currScene) throws IOException {
         Parent pane = FXMLLoader.load(Main.class.getResource(view));
-//        Scene scene = new Scene(pane, Screen.getPrimary().getBounds().getWidth(), Screen.getPrimary().getBounds().getHeight());
         Scene scene = new Scene(pane, currScene.getWidth(), currScene.getHeight());
         scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource("/com/example/yuber/css/styles.css")).toExternalForm());
         parent.setTitle("Welcome to Yuber");

@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CustomerWaitController {
+public class AcceptedController {
     @FXML
     private VBox rootPane;
 
@@ -47,10 +47,20 @@ public class CustomerWaitController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (OrderService.checkIfAccepted(OrderSession.getOrder())) {
+            if (OrderService.checkIfCanceled(OrderSession.getOrder())) {
                 Platform.runLater(() -> {
                     try {
-                        SceneService.NewScene("/com/example/yuber/accepted-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
+                        SceneService.NewScene("/com/example/yuber/customer-wait-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                break;
+            }
+            else if (OrderService.checkIfFinished(OrderSession.getOrder())) {
+                Platform.runLater(() -> {
+                    try {
+                        SceneService.NewScene("/com/example/yuber/rating-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -58,14 +68,5 @@ public class CustomerWaitController {
                 break;
             }
         } while(running);
-    }
-
-    @FXML
-    protected void onCancelButtonClick() throws IOException {
-        SceneService.NewScene("/com/example/yuber/customer-view.fxml", (Stage)rootPane.getScene().getWindow(), rootPane.getScene());
-        running = false;
-        OrderService.cancel(OrderSession.getOrder());
-        OrderSession.deleteOrder();
-        UserService.cancelPenalty(UserSession.getUser());
     }
 }

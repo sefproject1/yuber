@@ -18,6 +18,7 @@
         <VBox>
             <Label fx:id="sourceAddress" id="header"></Label>
             <Label fx:id="destinationAddress" id="header"></Label>
+            <Label fx:id="price" id="header"></Label>
         </VBox>
     </VBox>
 </VBox>

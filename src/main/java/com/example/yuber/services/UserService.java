@@ -127,4 +127,8 @@ public class UserService {
         }
     }
 
+    public static double calculatePrice(UserModel um) {
+        return 25 + (um.getPenalty() * 25) / 100;
+    }
+
 }
