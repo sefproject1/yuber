@@ -131,4 +131,8 @@ public class UserService {
             throw new RuntimeException();
         }
     }
+
+    public static double calculatePrice(UserModel um) {
+        return 25 + (um.getPenalty() * 25) / 100;
+    }
 }

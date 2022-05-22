@@ -27,12 +27,16 @@ public class CustomerWaitController {
     @FXML
     private Label destinationAddress;
 
+    @FXML
+    private Label price;
+
     private AcceptanceRunnable acceptanceRunnable;
 
     @FXML
     public void initialize() throws InterruptedException {
         sourceAddress.setText("From: " + OrderSession.getOrder().getSourceAddress());
         destinationAddress.setText("To: " + OrderSession.getOrder().getDestinationAddress());
+        price.setText("You'll need to pay RON " + UserService.calculatePrice(UserSession.getUser()) + " for this ride.");
 
         acceptanceRunnable = new AcceptanceRunnable();
         Thread t = new Thread(acceptanceRunnable);
