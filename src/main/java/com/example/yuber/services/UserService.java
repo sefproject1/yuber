@@ -1,6 +1,7 @@
 package com.example.yuber.services;
 
 
+import com.example.yuber.exceptions.EmptyInputException;
 import com.example.yuber.exceptions.InvalidCredentialsException;
 import com.example.yuber.exceptions.UserAlreadyExistsException;
 import com.example.yuber.models.OrderModel;
@@ -32,8 +33,9 @@ public class UserService {
         }
     }
 
-    public static void addUser(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws UserAlreadyExistsException {
+    public static void addUser(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws UserAlreadyExistsException, EmptyInputException {
         checkUserDoesNotExist(username);
+        checkEmptyInput(username, password, surname, name, phone_number, email, address, role);
         arrayList.add(new UserModel(username, encodePassword(username, password), surname, name, phone_number, email, address, role, 0));
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -48,6 +50,11 @@ public class UserService {
             if(Objects.equals(username, user.getUsername()))
                 throw new UserAlreadyExistsException(username);
         }
+    }
+
+    private static void checkEmptyInput(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws EmptyInputException {
+        if (username.equals("") || password.equals("") || surname.equals("") || name.equals("") || phone_number.equals("") || email.equals("") || address.equals("") || role == null)
+            throw new EmptyInputException("No field should be empty.");
     }
 
     private static String encodePassword(String salt, String password) {

@@ -1,5 +1,6 @@
 package com.example.yuber.controllers;
 
+import com.example.yuber.exceptions.EmptyInputException;
 import com.example.yuber.exceptions.UserAlreadyExistsException;
 import com.example.yuber.services.SceneService;
 import com.example.yuber.services.UserService;
@@ -51,6 +52,9 @@ public class RegistrationController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), surnameField.getText(), nameField.getText(), phoneNumberField.getText(), emailField.getText(), addressField.getText(), role.getValue());
             registrationMessage.setText("Account created successfully!");
         }catch (UserAlreadyExistsException e){
+            registrationMessage.setText(e.getMessage());
+        }
+        catch(EmptyInputException e) {
             registrationMessage.setText(e.getMessage());
         }
 
