@@ -1,5 +1,7 @@
 package com.example.yuber.models;
 
+import com.example.yuber.services.OrderService;
+
 public final class OrderSession { // Singleton
     private static OrderSession instance = new OrderSession();
     private static OrderModel order;
@@ -22,4 +24,7 @@ public final class OrderSession { // Singleton
         if (order != null)
             order = null;
     }
+
+
+
 }

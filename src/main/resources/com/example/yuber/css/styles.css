@@ -8,6 +8,18 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
+.Button{
+    -fx-background-color: #309de6;
+    -fx-text-fill: white;
+}
+
+.Button:hover {
+    -fx-background-color: #58bbfc;
+}
+
+.Button:pressed {
+    -fx-background-color: #2475ab;
+}
 #root {
     -fx-background-image: url("../img/background.jpg");
     -fx-background-repeat: stretch;
@@ -93,6 +105,20 @@
 }
 
 #btn-error-large:pressed {
+    -fx-background-color: #bf2217;
+}
+
+#btn-finish-large {
+    -fx-background-color: #f2190a;
+    -fx-text-fill: white;
+    -fx-font-size: 15pt;
+}
+
+#btn-finish-large:hover {
+    -fx-background-color: #ff6459;
+}
+
+#btn-finish-large:pressed {
     -fx-background-color: #bf2217;
 }
 

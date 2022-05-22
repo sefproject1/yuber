@@ -1,7 +1,6 @@
 package com.example.yuber.services;
 
 import com.example.yuber.exceptions.EmptyInputException;
-import com.example.yuber.exceptions.UserAlreadyExistsException;
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
 import com.example.yuber.models.UserModel;
@@ -17,6 +16,8 @@ import java.util.List;
 public class OrderService {
     private static List<OrderModel> orders;
     private static List<OrderModel> arrayList;
+
+    //private static List<OrderModel> address;
 
     public static void parseJson(){
         try {
@@ -95,4 +96,107 @@ public class OrderService {
             throw new RuntimeException();
         }
     }
+
+    public static void rideIsOver(OrderModel orderModel) {
+        parseJson();
+        for(OrderModel order : orders) {
+            if(order.equals((orderModel)) && order.getStatus().equals("ACCEPTED")) {
+                System.out.println("ok");
+                order.setStatus("COMPLETED");
+                OrderSession.setOrder(order);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("orders.json"), arrayList);
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
+        parseJson();
+    }
+
+    public static void acceptRide(OrderModel orderModel) {
+        parseJson();
+        for(OrderModel order : orders) {
+            if(order.equals((orderModel)) && order.getStatus().equals("WAITING")) {
+                order.setStatus("ACCEPTED");
+                OrderSession.setOrder(order);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("orders.json"), arrayList);
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
+    }
+
+    public static void cancelRide(OrderModel orderModel) {
+        parseJson();
+        for(OrderModel order : orders) {
+            if(order.equals((orderModel)) && order.getStatus().equals("ACCEPTED")) {
+                order.setStatus("WAITING");
+                OrderSession.setOrder(order);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File("orders.json"), arrayList);
+        }catch (IOException e){
+            throw new RuntimeException();
+        }
+    }
+
+    public static ArrayList<String> getSourceAddress() {
+
+        ArrayList<String> arrayList1 = new ArrayList<>();
+        //String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            arrayList1.add(orderModel.getSourceAddress());
+        }
+        return arrayList1;
+    }
+
+    public static ArrayList<String> getDestAddress() {
+        ArrayList<String> arrayList1 = new ArrayList<>();
+        //String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            //address += orderModel.getSourceAddress();
+            arrayList1.add(orderModel.getDestinationAddress());
+        }
+        return arrayList1;
+    }
+
+    public static ArrayList<String> getStatus() {
+        ArrayList<String> arrayList1 = new ArrayList<>();
+        //String address = "";
+        parseJson();
+        for(OrderModel orderModel : orders) {
+            //address += orderModel.getSourceAddress();
+            arrayList1.add(orderModel.getStatus());
+            //System.out.println("order " + arrayList1);
+        }
+        return arrayList1;
+    }
+
+    static int size = 0;
+    public static int getSize() {
+        parseJson();
+        return orders.size();
+    }
+
+    public static List<OrderModel> getOrder() {
+        parseJson();
+        return orders;
+    }
+
+
 }

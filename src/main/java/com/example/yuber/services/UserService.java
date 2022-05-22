@@ -3,17 +3,12 @@ package com.example.yuber.services;
 
 import com.example.yuber.exceptions.InvalidCredentialsException;
 import com.example.yuber.exceptions.UserAlreadyExistsException;
+import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.UserModel;
 import com.example.yuber.models.UserSession;
-import com.fasterxml.jackson.core.exc.StreamWriteException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.security.MessageDigest;
@@ -135,4 +130,14 @@ public class UserService {
     public static double calculatePrice(UserModel um) {
         return 25 + (um.getPenalty() * 25) / 100;
     }
+
+    public static UserModel findUser(OrderModel orderModel){
+        parseJson();
+        for(UserModel userModel : users){
+            if(userModel.getUsername().equals(orderModel.getCustomerUsername()))
+                return userModel;
+        }
+        return null;
+    }
+
 }
