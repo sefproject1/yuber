@@ -50,7 +50,7 @@ public class AcceptedController {
             if (OrderService.checkIfCanceled(OrderSession.getOrder())) {
                 Platform.runLater(() -> {
                     try {
-                        SceneService.NewScene("/com/example/yuber/canceled-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
+                        SceneService.NewScene("/com/example/yuber/customer-wait-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

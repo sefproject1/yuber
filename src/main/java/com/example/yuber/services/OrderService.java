@@ -61,7 +61,7 @@ public class OrderService {
         parseJson();
 
         for (OrderModel order : orders) {
-            if (order.equals(om) && order.getStatus().equals("CANCELED"))
+            if (order.equals(om) && order.getStatus().equals("WAITING"))
                 return true;
         }
         return false;
