@@ -127,12 +127,4 @@ public class UserService {
         }
     }
 
-    public static int getPrice(OrderModel orderModel) {
-        parseJson();
-        for(UserModel userModel: users) {
-            if(userModel.getUsername().equals(orderModel.getCustomerUsername()))
-                return userModel.getPenalty();
-        }
-        return 0;
-    }
 }
