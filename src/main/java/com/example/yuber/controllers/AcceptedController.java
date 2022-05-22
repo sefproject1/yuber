@@ -3,6 +3,7 @@ package com.example.yuber.controllers;
 import com.example.yuber.models.OrderSession;
 import com.example.yuber.models.UserSession;
 import com.example.yuber.services.OrderService;
+import com.example.yuber.services.RatingService;
 import com.example.yuber.services.SceneService;
 import com.example.yuber.services.UserService;
 import javafx.application.Platform;
@@ -12,10 +13,17 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class AcceptedController {
     @FXML
     private VBox rootPane;
+
+    @FXML
+    private Label info;
+
+    @FXML
+    private Label driverUsername;
 
     @FXML
     private Label sourceAddress;
@@ -32,6 +40,10 @@ public class AcceptedController {
 
     @FXML
     public void initialize() throws InterruptedException, IOException {
+        info.setText("Please wait for the driver to pick you up and get you to the destination.");
+        OrderService.updateOrderForClient(OrderSession.getOrder());
+        DecimalFormat df = new DecimalFormat("0.0");
+        driverUsername.setText("Driver: " + OrderSession.getOrder().getDriverUsername() + " (" + df.format(RatingService.getRating(OrderSession.getOrder().getDriverUsername())) + "/5.0 rating)");
         sourceAddress.setText("From: " + OrderSession.getOrder().getSourceAddress());
         destinationAddress.setText("To: " + OrderSession.getOrder().getDestinationAddress());
         price.setText("You'll need to pay RON " + UserService.calculatePrice(UserSession.getUser()) + " for this ride.");

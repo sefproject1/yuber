@@ -24,7 +24,4 @@ public final class OrderSession { // Singleton
         if (order != null)
             order = null;
     }
-
-
-
 }
