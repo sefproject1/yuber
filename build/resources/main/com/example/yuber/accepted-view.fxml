@@ -11,8 +11,9 @@
 
     <VBox id="paneLarge" VBox.vgrow="ALWAYS">
         <Label id="title">We found a ride for you.</Label>
-        <Label id="info">Please wait for the driver to pick you up and help you reach your destination.</Label>
+        <Label id="info" fx:id="info"></Label>
         <VBox>
+            <Label fx:id="driverUsername" id="header"></Label>
             <Label fx:id="sourceAddress" id="header"></Label>
             <Label fx:id="destinationAddress" id="header"></Label>
             <Label fx:id="price" id="header"></Label>

@@ -198,5 +198,13 @@ public class OrderService {
         return orders;
     }
 
+    public static void updateOrderForClient(OrderModel om) {
+        parseJson();
 
+        for (OrderModel order : orders) {
+            if (order.equals(om)) {
+                OrderSession.setOrder(order);
+            }
+        }
+    }
 }
