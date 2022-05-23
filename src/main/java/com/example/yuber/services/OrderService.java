@@ -102,7 +102,7 @@ public class OrderService {
         for(OrderModel order : orders) {
             if(order.equals((orderModel)) && order.getStatus().equals("ACCEPTED")) {
                 System.out.println("ok");
-                order.setStatus("COMPLETED");
+                order.setStatus("FINISHED");
                 OrderSession.setOrder(order);
                 break;
             }
