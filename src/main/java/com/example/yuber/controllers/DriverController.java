@@ -108,7 +108,7 @@ public class DriverController implements Initializable {
         if(getStatus().equals("CANCELED")){
             canceled = true;
         }
-        if(getStatus().equals("COMPLETED")){
+        if(getStatus().equals("FINISHED")){
             completed = true;
         }
         status.setMinSize(50, 20);
