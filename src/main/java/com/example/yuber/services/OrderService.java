@@ -4,6 +4,7 @@ import com.example.yuber.exceptions.EmptyInputException;
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
 import com.example.yuber.models.UserModel;
+import com.example.yuber.models.UserSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -122,6 +123,7 @@ public class OrderService {
         for(OrderModel order : orders) {
             if(order.equals((orderModel)) && order.getStatus().equals("WAITING")) {
                 order.setStatus("ACCEPTED");
+                order.setDriverUsername(UserSession.getUser().getUsername());
                 OrderSession.setOrder(order);
                 break;
             }
