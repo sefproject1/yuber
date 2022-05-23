@@ -37,6 +37,7 @@ public class CustomerWaitController {
         price.setText("You'll need to pay RON " + UserService.calculatePrice(UserSession.getUser()) + " for this ride.");
 
         t = new Thread(this::handleThread);
+        t.setDaemon(true);
         t.start();
     }
 
@@ -48,6 +49,7 @@ public class CustomerWaitController {
                 e.printStackTrace();
             }
             if (OrderService.checkIfAccepted(OrderSession.getOrder())) {
+                running = false;
                 Platform.runLater(() -> {
                     try {
                         SceneService.NewScene("/com/example/yuber/accepted-view.fxml", (Stage) rootPane.getScene().getWindow(), rootPane.getScene());
@@ -55,7 +57,6 @@ public class CustomerWaitController {
                         e.printStackTrace();
                     }
                 });
-                break;
             }
         } while(running);
     }
