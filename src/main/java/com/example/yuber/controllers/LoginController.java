@@ -37,6 +37,17 @@ public class LoginController {
         try {
             UserService.login(username.getText(), password.getText());
 
+            try {
+                String view = "";
+                if(UserSession.getInstance().getUser().getRole().equals("driver"))
+                    view = "driver-view.fxml";
+                else view = "customer-view.fxml";
+
+                SceneService.NewWindow(view, "Dashboard - Yuber");
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+
             // close current window
             Stage currStage = (Stage)error.getScene().getWindow();
             currStage.close();

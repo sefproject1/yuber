@@ -36,6 +36,7 @@ public class UserService {
     public static void addUser(String username, String password, String surname, String name, String phone_number, String email, String address, String role) throws UserAlreadyExistsException, EmptyInputException {
         checkUserDoesNotExist(username);
         checkEmptyInput(username, password, surname, name, phone_number, email, address, role);
+
         arrayList.add(new UserModel(username, encodePassword(username, password), surname, name, phone_number, email, address, role, 0));
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -46,6 +47,8 @@ public class UserService {
     }
 
     private static void checkUserDoesNotExist(String username) throws UserAlreadyExistsException{
+        parseJson();
+
         for (UserModel user : arrayList) {
             if(Objects.equals(username, user.getUsername()))
                 throw new UserAlreadyExistsException(username);
@@ -82,17 +85,6 @@ public class UserService {
         if (user != null) {
             // save the user to the UserSession singleton
             UserSession.getInstance().setUser(user);
-
-            try {
-                String view = "";
-                if(UserSession.getInstance().getUser().getRole().equals("driver"))
-                    view = "driver-view.fxml";
-                else view = "customer-view.fxml";
-
-                SceneService.NewWindow(view, "Dashboard - Yuber");
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
         }
         else throw new InvalidCredentialsException();
     }
