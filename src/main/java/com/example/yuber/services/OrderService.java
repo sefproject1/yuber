@@ -3,7 +3,6 @@ package com.example.yuber.services;
 import com.example.yuber.exceptions.EmptyInputException;
 import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.OrderSession;
-import com.example.yuber.models.UserModel;
 import com.example.yuber.models.UserSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,8 +16,6 @@ import java.util.List;
 public class OrderService {
     private static List<OrderModel> orders;
     private static List<OrderModel> arrayList;
-
-    //private static List<OrderModel> address;
 
     public static void parseJson(){
         try {

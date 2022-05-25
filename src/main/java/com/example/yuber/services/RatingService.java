@@ -1,23 +1,14 @@
 package com.example.yuber.services;
 
 
-import com.example.yuber.exceptions.InvalidCredentialsException;
-import com.example.yuber.exceptions.UserAlreadyExistsException;
-import com.example.yuber.models.OrderModel;
 import com.example.yuber.models.RatingModel;
-import com.example.yuber.models.UserModel;
-import com.example.yuber.models.UserSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class RatingService {
     private static List<RatingModel> ratings;
